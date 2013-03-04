@@ -1,0 +1,28 @@
+<atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/pluginIcon.png</param>
+        <param name="plugin-logo">images/pluginLogo.png</param>
+    </plugin-info>
+
+    <resource type="i18n" name="i18n" location="slidify"/>
+
+    <web-resource key="slidify-resources" name="slidify Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+
+        <resource type="download" name="slidify.css" location="/css/slidify.css"/>
+        <resource type="download" name="slidify.js" location="/js/slidify.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>page</context>
+    </web-resource>
+
+
+    <web-item key="slidify" name="Slidify" section="system.content.action/primary" weight="40">
+        <label key="slidify" />
+        <link linkId="slidify-link"></link>
+    </web-item>
+    
+</atlassian-plugin>
